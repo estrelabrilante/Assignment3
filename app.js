@@ -20,6 +20,15 @@ const app = Vue.createApp({
       }
     },
   },
-  watch: {},
+  watch: {
+    counter(value) {
+      if (value > 37) {
+        const that = this;
+        setTimeout(function () {
+          that.counter = 0;
+        }, 5);
+      }
+    },
+  },
 });
 app.mount("#assignment");
